@@ -3,10 +3,10 @@
 IFS='
 '
 
-if [ $(wmctrl -l | grep -c "$2") -ne 0 ]
-then
-    echo Focus "$2"
-    wmctrl -a "$2"
+APP_ID=$(wmctrl -l | grep -E "$2" | awk '{print $1}')
+if [ -n "$APP_ID" ]; then
+    echo Focus "$APP_ID"
+    wmctrl -ia "$APP_ID"
 else
     echo Launch "$1"
     $1 &
