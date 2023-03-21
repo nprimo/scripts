@@ -16,7 +16,15 @@ $ ./focus_on.sh <binary of the app> <X Window Manager name of the app>
 $
 ```
 
+## prettify
+
+A script to format the passed files as arguments. It assumes that `prettier`
+npm module is already installed.  
+The final result is a `prettier` formatted document with only H2 or below.
+
 ## To Do
+
+### focus_on
 
 - Split `focus_on` in two different script. Rename it `focus_or_start.sh`.
   It is possible to have a specific map (look how in bash) to link the specific
