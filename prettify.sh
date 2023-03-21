@@ -13,7 +13,7 @@ format () {
     npx prettier -w "$1"
     # From H1 to H2 (only .md files)
     if [[ "$1" =~ .*\.md$ ]]; then
-        sed -i 's:# :## :' "$1"
+        sed -i 's:^# :## :' "$1"
     fi
 }
 
