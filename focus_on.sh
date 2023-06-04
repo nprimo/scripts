@@ -8,6 +8,5 @@ if [ -n "$APP_ID" ]; then
     echo Focus "$APP_ID"
     wmctrl -ia "$APP_ID"
 else
-    echo Launch "$1"
-    $1 &
+    echo "$1 is not running yet"
 fi
