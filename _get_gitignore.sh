@@ -1,4 +1,5 @@
-g_opts=$(curl -s https://api.github.com/repos/github/gitignore/contents/ | jq '.[] .name' | xargs)
+g_opts=$(gh api /repos/github/gitignore/contents/ \
+    | jq '.[] .name' | grep gitignore |xargs)
 
 _get_gitignore() {
     local cur prev opts
