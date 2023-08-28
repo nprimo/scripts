@@ -1,10 +1,7 @@
 #!/usr/bin/env bash 
 
-# Remove containers
-# - Stop all containers
-docker stop $(docker ps -aq)
-# - Remove all containers
-docker rm $(docker ps -aq)
-
-# Remove all images with tag "<none>"
-docker rmi $(docker images | grep \<none\> | awk '{print $3}')
+if [[ $(docker images | grep none) ]]; then
+    docker rmi $(docker images | grep \<none\> | awk '{print $3}')
+else
+    echo "No images with <none> tag"
+fi
