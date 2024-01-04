@@ -12,7 +12,7 @@ case ${CURRENT} in
         echo "to US"
         ;;
     *)
-        echo "is {CURRENT}"
+        echo "is ${CURRENT}"
         setxkbmap pt 
         ;;
 esac
